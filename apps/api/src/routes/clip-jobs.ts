@@ -39,6 +39,9 @@ const CreateJob = z.object({
   // bake the designed cover (best frame + hook) as a ~0.7s hook-card at the clip start, so it becomes
   // the actual cover on X / YouTube Shorts / TikTok (the platforms/Buffer won't accept a cover image)
   hookCard: z.boolean().default(false),
+  // our karaoke captions: auto = skip if the source already has burned-in subtitles (detected by the
+  // analyze step); always = always add ours; never = never add ours (source has its own)
+  captionMode: z.enum(["auto", "always", "never"]).default("auto"),
 });
 
 /** Studio jobs need a category (long_forms.category_id is NOT NULL); use a dedicated one. */
@@ -154,6 +157,7 @@ export const clipJobsRoutes = new Hono<AuthedEnv>()
         ...(input.maxLen ? { maxLen: input.maxLen } : {}),
         ...(input.minScore ? { minScore: input.minScore } : {}),
         ...(input.hookCard ? { hookCard: true } : {}),
+        ...(input.captionMode !== "auto" ? { captionMode: input.captionMode } : {}),
       },
     });
     await enqueue(Q.clipIngestUrl, { longFormId: id });

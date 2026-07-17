@@ -246,6 +246,17 @@ async function renderOne(
     } else if (renderKind === "clip-captions") {
       const clip = await clipSource(brief);
       const sourcePath = await cachedDownload(clip.sourceKey); // shared cache: source downloaded once per run
+      // Skip OUR karaoke captions when the source already has burned-in subtitles (else two caption
+      // tracks overlap). captionMode (clip_options): "auto" = skip iff clip.analyze detected source
+      // captions; "never" = never add ours; "always" = always add ours. Default "auto".
+      const lf = brief.longFormId
+        ? (await db.select().from(longForms).where(eq(longForms.id, brief.longFormId)).limit(1))[0]
+        : undefined;
+      const captionMode =
+        (lf?.clipOptions as { captionMode?: "auto" | "always" | "never" } | null)?.captionMode ??
+        "auto";
+      const skipOurCaptions =
+        captionMode === "never" || (captionMode === "auto" && lf?.hasBurnedCaptions === true);
       let assPath: string | undefined;
       let keepSegments: KeepSegment[] | undefined;
       if (clip.transcriptKey) {
@@ -280,10 +291,11 @@ async function renderOne(
             // no word-level timing — fall back to segment slicing (no trim possible)
             chunked = chunkWords(clipCaptionSegments(whisper, clip.startSec, clip.endSec), 3);
           }
-          // viral captions: 1-3 words on screen, karaoke highlight, Anton preset, ~65% height
+          // viral captions: 1-3 words on screen, karaoke highlight, Anton preset, ~65% height.
+          // skipOurCaptions ⇒ the source already has burned-in subs; leave assPath unset (no 2nd track).
           const preset =
             CAPTION_PRESETS[brief.captionPreset ?? "hormozi"] ?? CAPTION_PRESETS.hormozi;
-          if (chunked.length > 0) {
+          if (chunked.length > 0 && !skipOurCaptions) {
             assPath = join(dir, "clip.ass");
             await Bun.write(
               assPath,

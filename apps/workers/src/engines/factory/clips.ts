@@ -205,7 +205,11 @@ export async function clipAnalyzeHandler(
   }
 
   if (payload.kind === "longform") {
-    await db.update(longForms).set({ status: "analyzed" }).where(eq(longForms.id, payload.id));
+    await db
+      .update(longForms)
+      // record whether the source already has burned-in subtitles → render skips ours (captionMode auto)
+      .set({ status: "analyzed", hasBurnedCaptions: result.hasBurnedCaptions ?? false })
+      .where(eq(longForms.id, payload.id));
   }
 
   // clip-studio one-click auto-promotion: promote the top-N moments as render-only studio clips

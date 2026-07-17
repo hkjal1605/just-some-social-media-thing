@@ -359,6 +359,9 @@ export const longForms = pgTable("long_forms", {
   sourceUrl: text("source_url"), // clip-studio: the pasted R2/public URL to ingest from
   genre: text("genre"), // detected/overridden genre → analysis + genre-adaptive render
   clipOptions: jsonb("clip_options"), // studio job: { platforms, topN, captionPreset, maxLen, minScore }
+  // set by clip.analyze (Gemini): true ⇒ the source ALREADY has burned-in subtitles, so the render
+  // skips OUR karaoke captions (captionMode "auto") to avoid two overlapping caption tracks.
+  hasBurnedCaptions: boolean("has_burned_captions"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

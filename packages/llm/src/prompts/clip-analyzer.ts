@@ -36,7 +36,9 @@ ${GENRE_PLAYBOOK}
 
 ${SAFETY_GATE}
 
-For EACH moment return:
+ALSO detect whether the video ALREADY has hardcoded / burned-in SUBTITLES or CAPTIONS — persistent on-screen text that transcribes the SPOKEN words (usually a line or two along the lower part of the frame), the kind creators hard-bake into the video. Do NOT count logos, channel names, titles / lower-thirds, meme captions, or occasional graphics. Report it as a top-level boolean "hasBurnedCaptions" (we use it to avoid burning a SECOND caption track over the source's own).
+
+Return a JSON object { "hasBurnedCaptions": <boolean>, "moments": [ ... ] }. For EACH moment return:
 - startSec, endSec — align to the transcript; put the hook at the very START of the window,
 - hookScore, selfContainedScore, emotionScore (0-100) — score honestly. A tight, self-contained emotional peak that opens strong beats a longer rambling one.
 - transcriptSlice: the VERBATIM words spoken in that window (≤500 chars),

@@ -34,6 +34,9 @@ export const ScriptsSceneVisualsSchema = z.array(SceneVisualSchema);
 // its scores + verbatim transcriptSlice AND its ready-to-post creative (hookVariants + captions), so
 // no separate scriptwriter call runs for clips. Whisper still owns the word-level caption timing.
 export const ClipMomentsSchema = z.object({
+  // true ⇒ the SOURCE video already has hardcoded/burned-in subtitles → skip our karaoke captions.
+  // optional (not .default) so the schema stays input==output for analyzeVideo's z.ZodType<T>.
+  hasBurnedCaptions: z.boolean().optional(),
   moments: z
     .array(
       z.object({

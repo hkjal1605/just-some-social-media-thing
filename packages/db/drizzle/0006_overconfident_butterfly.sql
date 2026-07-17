@@ -1,0 +1,1 @@
+ALTER TABLE "long_forms" ADD COLUMN "has_burned_captions" boolean;

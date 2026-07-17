@@ -192,6 +192,7 @@ function CreateJobForm() {
   const [genre, setGenre] = useState("");
   const [maxLen, setMaxLen] = useState("");
   const [hookCard, setHookCard] = useState(false);
+  const [captionMode, setCaptionMode] = useState<"auto" | "always" | "never">("auto");
   const [err, setErr] = useState<string | null>(null);
 
   const create = useMutation({
@@ -207,6 +208,7 @@ function CreateJobForm() {
           ...(genre ? { genre } : {}),
           ...(maxLen ? { maxLen: Number(maxLen) } : {}),
           ...(hookCard ? { hookCard: true } : {}),
+          ...(captionMode !== "auto" ? { captionMode } : {}),
         }),
       }),
     onSuccess: () => {
@@ -342,6 +344,19 @@ function CreateJobForm() {
               placeholder="auto"
               className="w-full rounded border border-zinc-300 bg-transparent px-2 py-1.5 text-sm outline-none focus:border-zinc-500 dark:border-zinc-700"
             />
+          </label>
+
+          <label className="block text-sm">
+            <span className="mb-1 block text-zinc-600 dark:text-zinc-400">Captions</span>
+            <select
+              value={captionMode}
+              onChange={(e) => setCaptionMode(e.target.value as "auto" | "always" | "never")}
+              className="w-full rounded border border-zinc-300 bg-transparent px-2 py-1.5 text-sm dark:border-zinc-700"
+            >
+              <option value="auto">Auto — skip if source already has subtitles</option>
+              <option value="always">Always add my captions</option>
+              <option value="never">Never add my captions</option>
+            </select>
           </label>
         </div>
 
