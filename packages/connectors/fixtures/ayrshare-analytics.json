@@ -1,0 +1,20 @@
+{
+  "views": 15200,
+  "likes": 1840,
+  "comments": 96,
+  "shares": 210,
+  "watchTimeSec": 401000,
+  "avgViewDurationSec": 26.4,
+  "raw": {
+    "tiktok": {
+      "id": "7420000000000000099",
+      "analytics": {
+        "views": 15200,
+        "likes": 1840,
+        "comments": 96,
+        "shares": 210,
+        "averageViewDuration": 26.4
+      }
+    }
+  }
+}

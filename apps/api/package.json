@@ -1,0 +1,16 @@
+{
+  "name": "@ve/app-api",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.0",
+    "@ve/config": "workspace:*",
+    "@ve/connectors": "workspace:*",
+    "@ve/core": "workspace:*",
+    "@ve/db": "workspace:*",
+    "@ve/storage": "workspace:*",
+    "hono": "^4.6.0",
+    "pg-boss": "^10.0.0",
+    "zod": "^3.24.0"
+  }
+}

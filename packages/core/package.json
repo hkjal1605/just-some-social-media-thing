@@ -1,0 +1,16 @@
+{
+  "name": "@ve/core",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "pino": "^9.0.0",
+    "uuidv7": "^1.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^11.0.0"
+  }
+}

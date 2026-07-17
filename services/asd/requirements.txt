@@ -1,0 +1,36 @@
+# services/asd -- active-speaker reframing service.
+#
+# Install everything with `pip install -r requirements.txt`, or hand-pick just
+# Tier 1 (+ Tier 2) for a lighter deploy that only ever uses the face-only
+# fallback. See README.md for the full tier breakdown and what happens when a
+# tier's deps aren't installed (detect.py degrades gracefully, never crashes).
+
+# --- Tier 1: always required ---------------------------------------------
+# opencv-python is needed for anything beyond the absolute center-fallback
+# (reading frames at all). numpy is needed by every tier above that.
+#
+# No opencv-python upper bound: this service vendors its own copies of every
+# face-only-tier model/data file (asd_engine/data/) specifically so it doesn't
+# depend on whatever a given opencv-python release bundles. Verified against
+# both the 4.x line and opencv-python 5.0 (which removed cv2.CascadeClassifier
+# and its bundled Haar cascade data entirely -- see README.md's "Compatibility
+# findings"); the tiered fallback (mediapipe -> YuNet -> Haar) handles either.
+numpy>=1.24,<3
+opencv-python>=4.9
+
+# --- Tier 2: better face-only fallback (optional) -------------------------
+# Without mediapipe, the face-only tier still works via the vendored YuNet
+# (cv2.FaceDetectorYN) or Haar cascade -- weaker across angles/lighting, but
+# zero extra install/network. Targets mediapipe's current Tasks API; see
+# README.md if you're on a mediapipe release old enough to still have
+# mp.solutions.face_detection (untested here, but Tasks API has been stable
+# since well before 0.10.9).
+mediapipe>=0.10.9,<1
+
+# --- Tier 3: primary path -- Light-ASD audio-visual active speaker
+# detection (optional). Needs both these packages AND the two weight files
+# fetched by `python download_weights.py` -- see README.md.
+torch>=2.2,<3
+scipy>=1.11,<2
+python_speech_features>=0.6,<1
+gdown>=5.1,<6

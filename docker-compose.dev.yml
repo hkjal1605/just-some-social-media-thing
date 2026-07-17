@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ve
+      POSTGRES_PASSWORD: ve
+      POSTGRES_DB: viral_engine
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U ve"], interval: 5s, retries: 10 }
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment: { MINIO_ROOT_USER: ve-local, MINIO_ROOT_PASSWORD: ve-local-secret }
+    ports: ["9000:9000", "9001:9001"]
+    volumes: [miniodata:/data]
+
+  minio-init:
+    image: minio/mc
+    depends_on: [minio]
+    entrypoint: >
+      /bin/sh -c "mc alias set local http://minio:9000 ve-local ve-local-secret &&
+      mc mb -p local/viral-engine || true"
+
+volumes: { pgdata: {}, miniodata: {} }

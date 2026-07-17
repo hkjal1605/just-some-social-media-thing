@@ -1,0 +1,12 @@
+{
+  "name": "@ve/media",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ve/core": "workspace:*",
+    "@ve/storage": "workspace:*"
+  }
+}

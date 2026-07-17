@@ -1,0 +1,26 @@
+[
+  {
+    "platform": "tiktok",
+    "externalId": "7420000000000000001",
+    "url": "https://www.tiktok.com/@aidailydemo/video/7420000000000000001",
+    "author": "aidailydemo",
+    "text": "I let an AI agent run my errands for a week #ai #aitools",
+    "mediaType": "video",
+    "thumbnailUrl": "https://p16-sign.tiktokcdn-us.com/fixture-7420000000000000001.jpeg",
+    "durationSec": 68,
+    "publishedAt": "2026-07-11T19:30:00.000Z",
+    "metrics": { "views": 2400000, "likes": 312000, "comments": 8400, "shares": 21500 }
+  },
+  {
+    "platform": "tiktok",
+    "externalId": "7420000000000000002",
+    "url": "https://www.tiktok.com/@techsimplified/video/7420000000000000002",
+    "author": "techsimplified",
+    "text": "3 AI tools that feel illegal to know #tech #ai",
+    "mediaType": "video",
+    "thumbnailUrl": "https://p16-sign.tiktokcdn-us.com/fixture-7420000000000000002.jpeg",
+    "durationSec": 63,
+    "publishedAt": "2026-07-12T01:10:00.000Z",
+    "metrics": { "views": 890000, "likes": 104000, "comments": 2600, "shares": 9800 }
+  }
+]

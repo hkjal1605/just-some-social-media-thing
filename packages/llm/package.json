@@ -1,0 +1,16 @@
+{
+  "name": "@ve/llm",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ve/config": "workspace:*",
+    "@ve/core": "workspace:*",
+    "@ve/db": "workspace:*",
+    "@ve/storage": "workspace:*",
+    "zod": "^3.24.0",
+    "zod-to-json-schema": "^3.24.0"
+  }
+}

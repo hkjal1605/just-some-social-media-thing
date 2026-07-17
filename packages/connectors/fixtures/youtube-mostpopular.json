@@ -1,0 +1,28 @@
+[
+  {
+    "platform": "youtube",
+    "externalId": "yt_fixture01",
+    "url": "https://www.youtube.com/watch?v=yt_fixture01",
+    "author": "TechExplained",
+    "title": "This open-source AI just changed everything (full demo)",
+    "text": "We test the new 32B open-source model on real coding tasks and compare it against the frontier labs.",
+    "mediaType": "video",
+    "thumbnailUrl": "https://i.ytimg.com/vi/yt_fixture01/hqdefault.jpg",
+    "durationSec": 812,
+    "publishedAt": "2026-07-11T15:00:00.000Z",
+    "metrics": { "views": 1284000, "likes": 61200, "comments": 4230 }
+  },
+  {
+    "platform": "youtube",
+    "externalId": "yt_fixture02",
+    "url": "https://www.youtube.com/watch?v=yt_fixture02",
+    "author": "AI Daily",
+    "title": "AI news this week: agents everywhere, voice APIs get cheap",
+    "text": "Everything that mattered in AI this week in 12 minutes.",
+    "mediaType": "video",
+    "thumbnailUrl": "https://i.ytimg.com/vi/yt_fixture02/hqdefault.jpg",
+    "durationSec": 723,
+    "publishedAt": "2026-07-12T02:30:00.000Z",
+    "metrics": { "views": 402000, "likes": 18800, "comments": 1510 }
+  }
+]

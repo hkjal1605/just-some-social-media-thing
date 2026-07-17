@@ -1,0 +1,23 @@
+[
+  {
+    "platform": "reddit",
+    "externalId": "t3_fx10011",
+    "url": "https://www.reddit.com/r/singularity/comments/fx10011/gemini_flash_now_narrates_video_in_realtime/",
+    "author": "futurewatch",
+    "title": "Gemini Flash now narrates video in realtime — tested it on a live F1 stream",
+    "mediaType": "link",
+    "publishedAt": "2026-07-12T08:05:00.000Z",
+    "metrics": { "score": 320, "likes": 340, "comments": 57, "shares": 2 }
+  },
+  {
+    "platform": "reddit",
+    "externalId": "t3_fx10012",
+    "url": "https://www.reddit.com/r/artificial/comments/fx10012/agents_that_selfimprove_their_own_prompts_a/",
+    "author": "promptsmith",
+    "title": "Agents that self-improve their own prompts: a 3-week experiment, full logs",
+    "text": "Every Sunday the agent rewrites its own playbook from the week's outcomes. Win rate curve attached.",
+    "mediaType": "text",
+    "publishedAt": "2026-07-12T07:38:00.000Z",
+    "metrics": { "score": 118, "likes": 126, "comments": 34, "shares": 1 }
+  }
+]

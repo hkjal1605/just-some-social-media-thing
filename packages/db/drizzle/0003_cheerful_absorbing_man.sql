@@ -1,0 +1,1 @@
+ALTER TABLE "clip_candidates" ADD COLUMN "script_data" jsonb;

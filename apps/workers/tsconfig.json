@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": ".", "outDir": "dist" },
+  "include": ["src", "test"],
+  "references": [
+    { "path": "../../packages/config" },
+    { "path": "../../packages/connectors" },
+    { "path": "../../packages/core" },
+    { "path": "../../packages/db" },
+    { "path": "../../packages/llm" },
+    { "path": "../../packages/media" },
+    { "path": "../../packages/storage" },
+    { "path": "../../packages/telegram" }
+  ]
+}

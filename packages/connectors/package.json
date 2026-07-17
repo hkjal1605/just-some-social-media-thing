@@ -1,0 +1,14 @@
+{
+  "name": "@ve/connectors",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ve/config": "workspace:*",
+    "@ve/core": "workspace:*",
+    "@ve/db": "workspace:*",
+    "zod": "^3.24.0"
+  }
+}

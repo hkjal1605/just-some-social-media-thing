@@ -1,0 +1,16 @@
+[
+  {
+    "externalCommentId": "t1_cm20001",
+    "author": "skeptical_dev",
+    "text": "Benchmarks look cherry-picked — did anyone reproduce SWE-bench verified locally?",
+    "score": 210,
+    "createdAt": "2026-07-12T06:42:00.000Z"
+  },
+  {
+    "externalCommentId": "t1_cm20002",
+    "author": "weights_and_biases",
+    "text": "Reproduced at 71.8% on my rig. Close enough given quantization. This is genuinely impressive.",
+    "score": 154,
+    "createdAt": "2026-07-12T07:03:00.000Z"
+  }
+]

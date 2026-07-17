@@ -1,0 +1,22 @@
+[
+  {
+    "platform": "x",
+    "externalId": "1946000000000000001",
+    "url": "https://x.com/ai_launchwatch/status/1946000000000000001",
+    "author": "ai_launchwatch",
+    "text": "The new open-source 32B model just topped SWE-bench verified. Weights are live. This is the fastest open catch-up we've ever seen.",
+    "mediaType": "text",
+    "publishedAt": "2026-07-12T05:15:00.000Z",
+    "metrics": { "views": 918000, "likes": 12400, "comments": 842, "shares": 3100, "score": 2100 }
+  },
+  {
+    "platform": "x",
+    "externalId": "1946000000000000002",
+    "url": "https://x.com/buildinpublic_ai/status/1946000000000000002",
+    "author": "buildinpublic_ai",
+    "text": "Launched our agent marketplace 6 hours ago. 4,000 signups. The demand for hosted agents is not a meme.",
+    "mediaType": "text",
+    "publishedAt": "2026-07-12T07:50:00.000Z",
+    "metrics": { "views": 402000, "likes": 6900, "comments": 512, "shares": 1200, "score": 980 }
+  }
+]

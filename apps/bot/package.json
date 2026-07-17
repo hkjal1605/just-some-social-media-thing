@@ -1,0 +1,10 @@
+{
+  "name": "@ve/app-bot",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@ve/config": "workspace:*",
+    "@ve/core": "workspace:*",
+    "@ve/telegram": "workspace:*"
+  }
+}

@@ -1,0 +1,14 @@
+# Pretrained weights are fetched by download_weights.py, not committed.
+weights/*
+!weights/.gitkeep
+
+# Local virtualenv (see README.md setup).
+.venv/
+venv/
+
+__pycache__/
+*.pyc
+
+# Scratch output from manual test runs.
+/tmp/
+*.local.json

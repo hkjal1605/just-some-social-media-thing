@@ -1,0 +1,13 @@
+{
+  "name": "@ve/telegram",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ve/config": "workspace:*",
+    "@ve/core": "workspace:*",
+    "grammy": "^1.30.0"
+  }
+}

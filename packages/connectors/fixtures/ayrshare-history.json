@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ayr-fixture-post-001",
+    "status": "success",
+    "created": "2026-07-12T10:00:00Z",
+    "platforms": ["tiktok"],
+    "postIds": [
+      {
+        "platform": "tiktok",
+        "id": "7420000000000000099",
+        "postUrl": "https://www.tiktok.com/@ourbrand/video/7420000000000000099",
+        "status": "success"
+      }
+    ]
+  }
+]

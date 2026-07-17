@@ -1,0 +1,19 @@
+# deps / build outputs
+node_modules/
+dist/
+dist-types/
+*.tsbuildinfo
+apps/dashboard/dist/
+
+# env — .env.example and .env.test are committed, real env files never
+.env
+.env.*
+!.env.example
+!.env.test
+*.local
+
+# scratch
+tmp/
+.DS_Store
+
+# NOTE: packages/db/drizzle/ (migrations + meta) is COMMITTED — never ignore it.

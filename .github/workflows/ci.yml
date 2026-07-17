@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: ve
+          POSTGRES_PASSWORD: ve
+          POSTGRES_DB: viral_engine_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ve"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      # ffmpeg (with libass) for @ve/media integration tests
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run typecheck
+      - run: bun test
+      # schema ↔ committed migrations in sync
+      - run: bun run db:check
+      # catches TS/JSX errors in the SPA build path
+      - run: bun run build:dashboard

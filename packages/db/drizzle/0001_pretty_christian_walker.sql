@@ -1,0 +1,1 @@
+ALTER TABLE "trends" ADD COLUMN "centroid" jsonb;

@@ -1,0 +1,36 @@
+[
+  {
+    "platform": "reddit",
+    "externalId": "t3_fx10001",
+    "url": "https://www.reddit.com/r/artificial/comments/fx10001/open_source_model_beats_frontier_on_agentic/",
+    "author": "ml_watcher",
+    "title": "Open-source 32B model beats frontier labs on agentic benchmarks — weights on HF",
+    "text": "Benchmarks in the paper: SWE-bench verified 74%, TAU-bench 81%. Runs on a single 4090 quantized. Links in comments.",
+    "mediaType": "text",
+    "publishedAt": "2026-07-12T06:10:00.000Z",
+    "metrics": { "score": 4180, "likes": 4300, "comments": 512, "shares": 12 }
+  },
+  {
+    "platform": "reddit",
+    "externalId": "t3_fx10002",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/fx10002/i_replaced_my_entire_notetaking_stack_with_a/",
+    "author": "gpu_poor",
+    "title": "I replaced my entire note-taking stack with a local agent — demo video",
+    "mediaType": "video",
+    "thumbnailUrl": "https://b.thumbs.redditmedia.com/fx10002.jpg",
+    "durationSec": 94,
+    "publishedAt": "2026-07-12T04:45:00.000Z",
+    "metrics": { "score": 2210, "likes": 2290, "comments": 301, "shares": 8 }
+  },
+  {
+    "platform": "reddit",
+    "externalId": "t3_fx10003",
+    "url": "https://www.reddit.com/r/OpenAI/comments/fx10003/the_new_realtime_voice_api_pricing_is_wild/",
+    "author": "apibuilder",
+    "title": "The new realtime voice API pricing is wild — full cost breakdown inside",
+    "text": "Ran 1,000 calls through it last night. Effective $/minute lands at about a third of the old stack. Spreadsheet linked.",
+    "mediaType": "text",
+    "publishedAt": "2026-07-11T21:20:00.000Z",
+    "metrics": { "score": 1470, "likes": 1530, "comments": 208, "shares": 5 }
+  }
+]

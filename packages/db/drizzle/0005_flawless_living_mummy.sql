@@ -1,0 +1,1 @@
+ALTER TABLE "renders" ADD COLUMN "thumb_offset_ms" integer;

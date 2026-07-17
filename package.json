@@ -1,0 +1,33 @@
+{
+  "name": "viral-engine",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run scripts/dev.ts",
+    "dev:api": "bun --watch apps/api/src/index.ts",
+    "dev:workers": "bun --watch apps/workers/src/index.ts",
+    "dev:bot": "bun --watch apps/bot/src/index.ts",
+    "dev:dashboard": "bun run --cwd apps/dashboard dev",
+    "db:generate": "bun run --cwd packages/db drizzle-kit generate",
+    "db:check": "bun run --cwd packages/db drizzle-kit check",
+    "db:migrate": "bun run --cwd packages/db src/migrate.ts",
+    "db:seed": "bun run --cwd packages/db src/seed.ts",
+    "db:studio": "bun run --cwd packages/db drizzle-kit studio",
+    "build:dashboard": "bun run --cwd apps/dashboard build",
+    "typecheck": "bunx tsc -b",
+    "lint": "bunx biome check .",
+    "lint:fix": "bunx biome check --write .",
+    "test": "bun test",
+    "start:api": "bun apps/api/src/index.ts",
+    "start:workers": "bun apps/workers/src/index.ts",
+    "start:bot": "bun apps/bot/src/index.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "bun-types": "^1.2.0",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ayr-fixture-post-001",
+  "status": "success",
+  "refId": "ref-fixture-001",
+  "postIds": [
+    {
+      "platform": "tiktok",
+      "id": "7420000000000000099",
+      "postUrl": "https://www.tiktok.com/@ourbrand/video/7420000000000000099",
+      "status": "success"
+    }
+  ]
+}

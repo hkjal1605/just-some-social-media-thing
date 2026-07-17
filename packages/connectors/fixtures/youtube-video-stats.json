@@ -1,0 +1,26 @@
+[
+  {
+    "platform": "youtube",
+    "externalId": "yt_fixture11",
+    "url": "https://www.youtube.com/watch?v=yt_fixture11",
+    "author": "Two Minute Papers",
+    "title": "New video model generates a full minute of coherent footage!",
+    "mediaType": "video",
+    "thumbnailUrl": "https://i.ytimg.com/vi/yt_fixture11/hqdefault.jpg",
+    "durationSec": 371,
+    "publishedAt": "2026-07-12T09:00:00.000Z",
+    "metrics": { "views": 103500, "likes": 7900, "comments": 512 }
+  },
+  {
+    "platform": "youtube",
+    "externalId": "yt_fixture12",
+    "url": "https://www.youtube.com/watch?v=yt_fixture12",
+    "author": "Fireship",
+    "title": "I built an app with 5 competing AI agents… it got weird",
+    "mediaType": "video",
+    "thumbnailUrl": "https://i.ytimg.com/vi/yt_fixture12/hqdefault.jpg",
+    "durationSec": 254,
+    "publishedAt": "2026-07-11T18:20:00.000Z",
+    "metrics": { "views": 771200, "likes": 46100, "comments": 2903 }
+  }
+]
