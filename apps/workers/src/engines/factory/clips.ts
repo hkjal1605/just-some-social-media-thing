@@ -153,6 +153,19 @@ export async function clipAnalyzeHandler(
     fps: whisper.durationSec > 1200 ? "low" : "default", // >20 min → low fps (doc 05 §5)
   });
 
+  // analyzeVideo above can run for MINUTES; if the job was deleted meanwhile (the user removed the
+  // clip job, or re-submitted the same source), the long_form/campaign row is gone and the candidate
+  // inserts below would violate clip_candidates_long_form_id_long_forms_id_fk — a dangling-FK error
+  // that pg-boss then retries in a loop. Re-check the source still exists and abort gracefully
+  // (terminal, no retry) if it was removed mid-analyze. The promote/render tail is guarded too.
+  if (!(await resolveSource(payload.kind, payload.id))) {
+    log.warn(
+      { kind: payload.kind, id: payload.id },
+      "clip source deleted during analyze — aborting before candidate insert",
+    );
+    return { candidates: 0 };
+  }
+
   // idempotency (doc 08 §11): a retry re-runs analyzeVideo, so first clear this source's
   // un-promoted candidates (promoted ones — briefId set — are kept) to avoid duplicate inserts (M8)
   await db
